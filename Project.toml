@@ -1,0 +1,10 @@
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+PrettyTables = "08abe8d2-0d0c-5749-adfa-8a2ac140af0d"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+SimpleUnPack = "ce78b400-467f-4804-87d8-8f486da07d0a"
+Tenkai = "a4f5eaf3-cc41-4395-bb6a-2b58fc770896"
+TimerOutputs = "a759f4b9-e2f1-59dc-863e-4aeb61b1ea8f"
+Trixi = "a7f1ee26-1774-49b1-8366-f1abc58fbfcb"
+TrixiBase = "9a0f1c46-06d5-4909-a5a3-ce25d3fa3284"
