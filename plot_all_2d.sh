@@ -1,5 +1,5 @@
 BASEDIR=$(dirname "$0")
-home_dir="$BASEDIR/.."
+home_dir="$BASEDIR"
 run_dir="$home_dir/run"
 sh ${run_dir}/khi/plot_khi.sh
 for res in 128 256 512; do

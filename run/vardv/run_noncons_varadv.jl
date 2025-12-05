@@ -3,6 +3,7 @@ using Tenkai.SimpleUnPack
 using Tenkai.TenkaicRK
 using Tenkai.TenkaicRK.Tenkai
 Eq = Tenkai.TenkaicRK.EqVarAdv1D
+using Tenkai: VolumeIntegralWeak, True
 # Submodules
 
 # Set backend
