@@ -10,7 +10,7 @@ presented in the article
   title={Compact Runge-Kutta Flux Reconstruction methods for non-conservative hyperbolic equations},
   author={Babbar, Arpit and Ranocha, Hendrik},
   year={2025},
-  month={10},
+  month={12},
   eprint={?},
   eprinttype={arxiv},
   eprintclass={math.NA}
@@ -60,9 +60,8 @@ julia --project=. --threads=auto
 Then enter the following commands to generate all the data, and plot the 1-D results
 
 ```julia
-julia> import Pkg; Pkg.instantiate() # Does not need to be re-run the next time you enter the REPL
 julia> include("run_all.jl") # Generate all data
-julia> include("plot_all_1d.jl")
+julia> include("plot_all_1d.jl") # Plot 1-D figures
 ```
 
 If you wish to visualize the 2D figures, you need [ParaView](https://www.paraview.org) and its command line version `pvpython`.
@@ -76,7 +75,7 @@ All the figures are now ready and available in the home directory of the reposit
 
 ## Authors
 
-- [Arpit Babbar](https://arpit-babbar.github.io) (Johannes Gutenberg University Mainz, Germany)
+- [Arpit Babbar](https://babbar.dev) (Johannes Gutenberg University Mainz, Germany)
 - [Hendrik Ranocha](https://ranocha.de) (Johannes Gutenberg University Mainz, Germany)
 
 
