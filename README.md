@@ -1,7 +1,7 @@
 # Compact Runge-Kutta Flux Reconstruction methods for non-conservative hyperbolic equations
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/?/zenodo.?.svg)](https://zenodo.org/doi/???)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17827346.svg)](https://zenodo.org/doi/10.5281/zenodo.17827346)
 
 This repository contains information and code to reproduce the results
 presented in the article
@@ -10,7 +10,7 @@ presented in the article
   title={Compact Runge-Kutta Flux Reconstruction methods for non-conservative hyperbolic equations},
   author={Babbar, Arpit and Ranocha, Hendrik},
   year={2025},
-  month={10},
+  month={12},
   eprint={?},
   eprinttype={arxiv},
   eprintclass={math.NA}
@@ -18,8 +18,7 @@ presented in the article
 ```
 
 If you find these results useful, please cite the article mentioned above.
-If you use the implementations provided here, please **also** cite this
-repository as
+If you use the implementations provided here, please **also** cite this repository as
 ```bibtex
 @misc{babbar2025crknonconsrepro,
   title={Reproducibility repository for
@@ -27,7 +26,7 @@ repository as
   author={Babbar, Arpit and Ranocha, Hendrik},
   year={2025},
   howpublished={\url{https://github.com/Arpit-Babbar/paper_crk_nonconservative}},
-  doi={TODO}
+  doi={10.5281/zenodo.17827346}
 }
 ```
 
@@ -60,9 +59,8 @@ julia --project=. --threads=auto
 Then enter the following commands to generate all the data, and plot the 1-D results
 
 ```julia
-julia> import Pkg; Pkg.instantiate() # Does not need to be re-run the next time you enter the REPL
 julia> include("run_all.jl") # Generate all data
-julia> include("plot_all_1d.jl")
+julia> include("plot_all_1d.jl") # Plot 1-D figures
 ```
 
 If you wish to visualize the 2D figures, you need [ParaView](https://www.paraview.org) and its command line version `pvpython`.
@@ -76,7 +74,7 @@ All the figures are now ready and available in the home directory of the reposit
 
 ## Authors
 
-- [Arpit Babbar](https://arpit-babbar.github.io) (Johannes Gutenberg University Mainz, Germany)
+- [Arpit Babbar](https://babbar.dev) (Johannes Gutenberg University Mainz, Germany)
 - [Hendrik Ranocha](https://ranocha.de) (Johannes Gutenberg University Mainz, Germany)
 
 

@@ -197,7 +197,7 @@ files_vardv_gll = [joinpath(@__DIR__, "..", "run", "vardv", "results",
 markers_arr = ["s", "s", "s"]
 colors_arr = ["orange", "royalblue", "green"]
 degrees_array = [1, 2, 3]
-output_dir = joinpath(@__DIR__, "postprocessed_results")
+output_dir = "."
 
 plot_python_ndofs_vs_y_degrees(files_alfven_gl, ["Irrelevant"], degrees_array, markers_arr,
                                colors_arr, title = "GL, Radau",

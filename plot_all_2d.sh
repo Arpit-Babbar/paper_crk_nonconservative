@@ -1,5 +1,5 @@
 BASEDIR=$(dirname "$0")
-home_dir="$BASEDIR/.."
+home_dir="$BASEDIR"
 run_dir="$home_dir/run"
 sh ${run_dir}/khi/plot_khi.sh
 for res in 128 256 512; do
@@ -20,11 +20,13 @@ pvpython ${tang_dir}/plot_tang.py
 pvpython ${tang_dir}/plot_tang_pressure.py
 
 tmp_dir="${run_dir}/tenmom_super_stiff_2d"
-for file in ${tmp_dir}/*.py; do
-    pvpython "$file"
+initial_files="state_vx_initial.py state_vy_initial.py color_bar_rho.py color_bar_v1_v2_final.py color_bar_det_p.py"
+for file in $initial_files; do
+    pvpython "$tmp_dir/$file"
 done
 
 final_files="state_rho_final.py state_vx_final.py state_vy_final.py state_det.py"
 for file in $final_files; do
+    pvpython "${tmp_dir}/$file" --nx 50
     pvpython "${tmp_dir}/$file" --nx 400
 done

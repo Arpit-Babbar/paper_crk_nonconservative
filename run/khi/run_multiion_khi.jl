@@ -98,8 +98,8 @@ bound_limit = "no"
 bflux = evaluate
 final_time = 20.0
 
-nx = 8
-ny = 16
+nx = 64
+ny = 128
 cfl = 0.0
 bounds = ([-Inf], [Inf]) # Not used in Euler
 tvbM = 0.0

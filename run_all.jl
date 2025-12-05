@@ -1,7 +1,7 @@
-using TrixiBase: trixi_include
 import Pkg
 Pkg.activate(@__DIR__)
 Pkg.instantiate()
+using TrixiBase: trixi_include
 
 run_dir = joinpath(@__DIR__, "run")
 include(joinpath(run_dir, "burg_stiff", "generate_burg_stiff.jl"))

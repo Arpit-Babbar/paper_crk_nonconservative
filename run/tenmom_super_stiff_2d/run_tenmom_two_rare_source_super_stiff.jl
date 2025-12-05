@@ -80,14 +80,15 @@ function implicit_source_solve(lhs, eq, x, t, coefficient, source_terms::MyTenMo
     u4_np1 = lhs[4] - 0.5 * coefficient * u2_np1 * Wx
     u5_np1 = lhs[5] - 0.25 * coefficient * u3_np1 * Wx - 0.25 * coefficient * u2_np1 * Wy
     u6_np1 = lhs[6] - 0.5 * coefficient * u3_np1 * Wy
-    return SVector(u1_np1, u2_np1, u3_np1, u4_np1, u5_np1, u6_np1)
+    u_new = SVector(u1_np1, u2_np1, u3_np1, u4_np1, u5_np1, u6_np1)
+    source = TenkaicRK.calc_source(u_new, x, t, source_terms, eq)
+    return u_new, source
 end
 
 initial_value, exact_solution, boundary_value = initial_wave, exact_wave, dummy_bv
 
-degree = 0 # CHANGE TO 2 TO SEE THE CRASH
-# solver = cHT112()
-solver = cIMEX111()
+degree = 3
+solver = cAGSA343()
 solution_points = "gl"
 correction_function = "radau"
 numerical_flux = Eq.rusanov
@@ -95,8 +96,8 @@ bound_limit = "no"
 bflux = extrapolate
 final_time = 0.02
 
-nx = 800
-ny = 800
+nx = 50
+ny = 50
 cfl = 0.0
 bounds = ([-Inf], [Inf]) # Not used in Euler
 tvbM = 0.0
@@ -104,7 +105,7 @@ save_iter_interval = 0
 save_time_interval = 0.1 * final_time
 animate = true # Factor on save_iter_interval or save_time_interval
 compute_error_interval = 0
-cfl_safety_factor = 0.9 # Source term positivity condition has |∇W| making it 1e-4
+cfl_safety_factor = 0.95 # Source term positivity condition has |∇W| making it 1e-4
 
 #------------------------------------------------------------------------------
 grid_size = [nx, ny]
@@ -116,12 +117,11 @@ limiter = setup_limiter_blend(blend_type = fo_blend_imex(eq),
                               indicating_variables = Eq.conservative_indicator!,
                               reconstruction_variables = conservative_reconstruction,
                               indicator_model = "gassner",
-                              amax = 1.0,
+                              amax = 0.5,
                               pure_fv = false,
                               positivity_blending = PositivityBlending((Eq.density_constraint,
                                                                         Eq.trace_constraint,
                                                                         Eq.det_constraint)))
-limiter = setup_limiter_none()
 scheme = Scheme(solver, degree, solution_points, correction_function,
                 numerical_flux, bound_limit, limiter, bflux)
 param = Parameters(grid_size, cfl, bounds, save_iter_interval, save_time_interval,
