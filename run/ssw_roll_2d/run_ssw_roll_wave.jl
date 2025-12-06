@@ -140,17 +140,3 @@ sol = Tenkai.solve(eq, problem, scheme, param);
 println(sol["errors"])
 
 return sol;
-
-using DelimitedFiles
-
-using Tenkai.Plots
-xc = sol["grid"].xc
-yc = sol["grid"].yc
-ua = sol["ua"][1, 1:(end - 1), 1:(end - 1)]
-X = [x for x in xc for _ in yc]
-Y = [y for _ in xc for y in yc]
-gr(size = (600, 600))
-surface(xc, yc, vec(ua))
-
-plot(xc, ua[:, 10])
-Plots.savefig("roll_wave_2d_$(nx)_$(ny)_N$degree.png")
