@@ -49,14 +49,11 @@ SetActiveView(renderView1)
 # ----------------------------------------------------------------
 
 # create a new 'XML Rectilinear Grid Reader'
-avg0 = XMLRectilinearGridReader(registrationName='avg0*', FileName=['/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg000.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg001.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg002.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg003.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg004.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg005.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg006.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg007.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg008.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg009.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg010.vtr'])
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+avg0 = XMLRectilinearGridReader(registrationName='avg0*', FileName=[os.path.join(dir_path, 'tmp_super_stiff_2d_nx400', f'avg{str(i).zfill(3)}.vtr') for i in range(11)])
 avg0.PointArrayStatus = ['sol', 'rho', 'vx', 'vy', 'P11', 'P12', 'P22', 'Exact rho', 'Exact vx', 'Exact vy', 'Exact P11', 'Exact P12', 'Exact P22']
 avg0.TimeArray = 'None'
-
-# create a new 'XML Rectilinear Grid Reader'
-avg0_1 = XMLRectilinearGridReader(registrationName='avg0*', FileName=['/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg000.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg001.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg002.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg003.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg004.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg005.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg006.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg007.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg008.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg009.vtr', '/Users/arpitbabbar/repositories/paper_crk_noncons/run/tenmom_super_stiff_2d/output_tmp_super_stiff_2d/avg010.vtr'])
-avg0_1.PointArrayStatus = ['sol', 'rho', 'vx', 'vy', 'P11', 'P12', 'P22', 'Exact rho', 'Exact vx', 'Exact vy', 'Exact P11', 'Exact P12', 'Exact P22']
-avg0_1.TimeArray = 'None'
 
 # create a new 'Calculator'
 calculator1 = Calculator(registrationName='Calculator1', Input=avg0)

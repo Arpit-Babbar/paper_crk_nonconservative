@@ -51,7 +51,7 @@ SetActiveView(renderView1)
 # create a new 'XML Rectilinear Grid Reader'
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
-avg0 = XMLRectilinearGridReader(registrationName='avg0*', FileName=[os.path.join(dir_path, 'output_tmp_super_stiff_2d', f'avg{str(i).zfill(3)}.vtr') for i in range(11)])
+avg0 = XMLRectilinearGridReader(registrationName='avg0*', FileName=[os.path.join(dir_path, 'tmp_super_stiff_2d_nx400', f'avg{str(i).zfill(3)}.vtr') for i in range(11)])
 avg0.PointArrayStatus = ['sol', 'rho', 'vx', 'vy', 'P11', 'P12', 'P22', 'Exact rho', 'Exact vx', 'Exact vy', 'Exact P11', 'Exact P12', 'Exact P22']
 avg0.TimeArray = 'None'
 
