@@ -20,7 +20,7 @@ plotOverLine1 = PlotOverLine(registrationName='PlotOverLine1', Input=sol)
 plotOverLine1.Point1 = [0.0, 0.3125, 0.0]
 plotOverLine1.Point2 = [1.0, 0.3125, 0.0]
 
-SaveData('pressure_profile_3125.csv',
+SaveData(os.path.join(dir_path, 'pressure_profile_3125.csv'),
          proxy=plotOverLine1,
          PointDataArrays=['Points_X', 'p'])
 
@@ -28,6 +28,6 @@ plotOverLine2 = PlotOverLine(registrationName='plotOverLine2', Input=sol)
 plotOverLine2.Point1 = [0.0, 0.4277, 0.0]
 plotOverLine2.Point2 = [1.0, 0.4277, 0.0]
 
-SaveData('pressure_profile_4277.csv',
+SaveData(os.path.join(dir_path, 'pressure_profile_4277.csv'),
          proxy=plotOverLine2,
          PointDataArrays=['Points_X', 'p'])

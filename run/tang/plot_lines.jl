@@ -26,9 +26,10 @@ ax.plot(data_3125_x, data_3125_p, label = "cRKFR")
 
 ax.legend()
 
-plt.show()
 plt
-fig.savefig(joinpath(@__DIR__, "tang_line_cut_0_3125.pdf"))
+filename = joinpath(@__DIR__, "tang_line_cut_0_3125.pdf")
+fig.savefig(filename)
+run(`bash pdfbb $filename`)
 
 fig
 
@@ -49,8 +50,9 @@ ax.plot(data_4277_x, data_4277_p, label = "cRKFR")
 
 ax.legend()
 
-plt.show()
 plt
-fig.savefig(joinpath(@__DIR__, "tang_line_cut_0_4277.pdf"))
+filename = joinpath(@__DIR__, "tang_line_cut_0_4277.pdf")
+fig.savefig(filename)
+run(`bash pdfbb $filename`)
 
 fig

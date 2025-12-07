@@ -189,9 +189,9 @@ files_alfven_gll = [joinpath(@__DIR__, "..", "run", "convergence_alfven_wave", "
 
 files_alfven_gl = [joinpath(@__DIR__, "..", "run", "convergence_alfven_wave", "results",
                      "alfven_gl$i.txt") for i in 1:3]
-files_vardv_gl = [joinpath(@__DIR__, "..", "run", "vardv", "results",
+files_vardv_gl = [joinpath(@__DIR__, "..", "run", "varadv", "results",
                      "varadv_gl$(i).txt") for i in 1:3]
-files_vardv_gll = [joinpath(@__DIR__, "..", "run", "vardv", "results",
+files_vardv_gll = [joinpath(@__DIR__, "..", "run", "varadv", "results",
                      "varadv_gll$(i).txt") for i in 1:3]
 
 markers_arr = ["s", "s", "s"]
