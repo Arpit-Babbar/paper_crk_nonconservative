@@ -11,7 +11,7 @@ presented in the article
   author={Babbar, Arpit and Ranocha, Hendrik},
   year={2025},
   month={12},
-  eprint={?},
+  eprint={2512.08611},
   eprinttype={arxiv},
   eprintclass={math.NA}
 }
