@@ -6,11 +6,16 @@
 This repository contains information and code to reproduce the results
 presented in the article
 ```bibtex
-@online{babbar2025crknoncons,
-  title={Compact Runge-Kutta Flux Reconstruction methods for non-conservative hyperbolic equations},
+@article{babbar2026compact,
+  title={Compact {R}unge-{K}utta flux reconstruction methods
+         for non-conservative hyperbolic equations},
   author={Babbar, Arpit and Ranocha, Hendrik},
-  year={2025},
-  month={12},
+  journal={Journal of Computational Physics},
+  volume={563},
+  year={2026},
+  month={05},
+  pages={115060},
+  doi={10.1016/j.jcp.2026.115060},
   eprint={2512.08611},
   eprinttype={arxiv},
   eprintclass={math.NA}
